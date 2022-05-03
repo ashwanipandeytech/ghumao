@@ -3583,8 +3583,10 @@ input[type=submit]:focus {
         width: -moz-calc(100% - 40px);
         width: -webkit-calc(100% - 40px);
         width: calc(100% - 40px);
-        padding-left: 20px;
-        text-align: right;
+        text-align: center;
+    }
+    .callback-counter-wrap .counter-no {
+        font-size: 24px;
     }
 }
 
@@ -10087,6 +10089,16 @@ product checkout css
         margin-top: 50px;
     }
 }
+
+
+/* .innercontent {
+    height: 100px;
+}
+
+.package-content p {
+    height: 30px;
+    max-height: 30px;
+} */
 
 
 /*# sourceMappingURL=style.css.map */

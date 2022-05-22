@@ -9,7 +9,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-<style>:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-family-monospace:SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}*,:after,:before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}@media print{*,:after,:before{text-shadow:none!important;box-shadow:none!important}@page{size:a3}body{min-width:992px!important}}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}body{font-size:15px;color:#383838;background-color:#fff;font-family:Open Sans,sans-serif;font-weight:400;font-style:normal;line-height:1.6;-webkit-font-smoothing:antialiased;word-wrap:break-word}@media screen and (max-width: 575px){body{font-size:14px}}@charset "UTF-8"</style><link rel="stylesheet" href="styles.0f1710f8da1a47d8.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.0f1710f8da1a47d8.css"></noscript></head>
+<style>:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-family-monospace:SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}*,:after,:before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}@media print{*,:after,:before{text-shadow:none!important;box-shadow:none!important}@page{size:a3}body{min-width:992px!important}}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}body{font-size:15px;color:#383838;background-color:#fff;font-family:Open Sans,sans-serif;font-weight:400;font-style:normal;line-height:1.6;-webkit-font-smoothing:antialiased;word-wrap:break-word}@media screen and (max-width: 575px){body{font-size:14px}}@charset "UTF-8"</style><link rel="stylesheet" href="styles.ae18295b9054f0c7.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.ae18295b9054f0c7.css"></noscript></head>
 
 
 
@@ -25,7 +25,62 @@
     </div>
 
 
-<script src="runtime.143c6e85d6860f3b.js" type="module"></script><script src="polyfills.19446a11968d450e.js" type="module"></script><script src="scripts.5bb43c3a2ffc252c.js" defer></script><script src="main.9eea1a45970c82d1.js" type="module"></script>
+<script src="runtime.5b67be82348fd56a.js" type="module"></script><script src="polyfills.19446a11968d450e.js" type="module"></script><script src="scripts.5bb43c3a2ffc252c.js" defer></script><script src="main.24aac1736385fd22.js" type="module"></script>
+<script>
+    var $ = tjq;
+    $(function() {
 
+
+        // apply the class of active to the current nav link
+        $('.tab li a').on('click', function(e) {
+            e.preventDefault();
+            $('.tab li.active').removeClass('active');
+            $(this).parent('.tab li').addClass('active');
+        });
+
+        $(window).scroll(function() {
+            if ($(window).width() > 990) {
+                if ($(this).scrollTop() > 135) {
+                    $('.tab').addClass('fixed');
+                } else {
+                    $('.tab').removeClass('fixed');
+                }
+            }
+        });
+
+        // get an array of 'href' of each a tag
+
+        var navLink = $('.tab li a');
+        //console.log(navLink);
+        var aArray = [];
+
+        for (var i = 0; i < navLink.length; i++) {
+            //console.log(i);
+            var aChild = navLink[i];
+            var navArray = $(aChild).attr('href');
+            //console.log(navArray);
+            aArray.push(navArray);
+            //console.log(aArray);
+            var selector = aArray.join(" , ");
+            //console.log(selector);
+        }
+
+        $(window).scroll(function() {
+            var scrollTop = $(window).scrollTop();
+            var tops = [];
+
+            $(selector).each(function() {
+                var top = $(this).position().top - 60;
+                if (scrollTop > top) {
+                    var id = $(this).attr('id');
+                    $('.tab li').removeClass('active');
+                    $('a[href="#' + id + '"]').parent().addClass('active');
+                }
+                tops.push(top);
+            });
+
+        });
+    });
+</script>
 
 </body></html>

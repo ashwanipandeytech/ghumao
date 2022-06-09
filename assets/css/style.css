@@ -10091,6 +10091,10 @@ product checkout css
     }
 }
 
+.nav-tabs .nav-item {
+    font-size: 12px;
+}
+
 
 /* .innercontent {
     height: 100px;
